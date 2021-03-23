@@ -11,16 +11,12 @@
 
     <iframe style='border:0;margin:0;position:fixed;top:0;left:0;width:100%;height:8%;' src='navbar.html'></iframe>
 
-    <h1 style='font-size: 8vh; margin-top: 10%;'>Welcome!</h1> 
-    <h1 style='font-size: 5vh; margin-top: 0; font-weight: 100;'>I'm Xsticcy, a roblox dev</h1> 
+    <h1 style='font-size: 10vh; margin-top: 10%;'>About Me</h1> 
 
-    <div class='le'>
-        <h1 class='r' style='font-size: 5vh; margin-top: 10%; font-weight: 100;' onclick="setTimeout(function(){window.top.location.href = 'about.html'}, 120)">About me</h1> 
-    </div>
-    <div class='le'>
-        <h1 class='l' style='font-size: 5vh; margin-top: 0%; font-weight: 100;' onclick="setTimeout(function(){window.top.location.href = 'work.html'}, 120)">My work</h1> 
-    </div>
-
+    <p>I'm Xsticcy. A Hungarian Roblox developer.</p>
+    <p>I'm good at UI design and scripting.</p>
+    <p>I'm bad at building and modelling.</p>
+    <p>I'm not hireable! But I like to help people when they need help!</p>
 </body>
 </html>
 
@@ -51,10 +47,6 @@
         background: linear-gradient(#101010, rgb(62, 158, 126)); 
     }
 
-    body {
-        overflow: hidden;
-    }
-
     * {
         font-family: 'Roboto';
         color: white;
@@ -70,27 +62,10 @@
     p, a {
         font-size: 2vh;
     }
+    p {
+        margin-left: 2%;
+    }
     h1 {
         text-align: center;
-    }
-    .le>h1 {
-        transition: all 0.5s;
-        color: white;
-        cursor: pointer;
-    }
-    .le:hover>.r {
-        color: black;
-        transform: translateX(2%);
-    }
-    .le:hover>.l {
-        color: black;
-        transform: translateX(-2%);
-    }
-    .le {
-        transition: all 0.5s;
-        background: #101010;
-    }
-    .le:hover {
-        background: aquamarine;
     }
 </style>
