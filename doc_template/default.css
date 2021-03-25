@@ -1,0 +1,58 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(/Roboto/Roboto-Regular.ttf) format("truetype");
+}  
+*:not(code>*):not(code):not([class*="hljs-"]):not(.lessons-con):not(.lessons-con>*) {
+    color: white;
+    margin-top: 4px;
+    font-family: 'Roboto';
+}
+
+body {
+    background-color: #202040;
+}
+.lessons-con {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    border: 0;
+    left: 0;
+    top: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+h2>code {
+    background-color: #3a3a4d;
+    padding: 8px;
+}
+
+.doc-content {
+    position: absolute;
+    left: 280px;
+    top: 10px;
+    width: calc(100% - 290px);
+}
+
+button {
+    position: relative;
+    border: 0;
+    background-color: #505069;
+    padding-left: 60px;
+    padding-right: 60px;
+    height: 30px;
+    outline: none;
+    transition: all 0.2s, transform 0.1s;
+}
+button:hover {
+    background-color: #686888;
+}
+button:active {
+    transform: scale(.97,.97);
+    background-color: #3a3a4d;
+}
+h2 code {
+    font-weight: 100;
+}

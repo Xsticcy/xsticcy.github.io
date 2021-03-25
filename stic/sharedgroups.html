@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel='stylesheet' href='/doc_template/default.css' type="text/css"></link>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+      href="/luaHL/styles/atom-one-dark.css">
+    <script src="/luaHL/highlight.pack.js"></script><script>hljs.highlightAll();</script>
+    
+    <title>Stic - Shared Groups</title>
+
+</head>
+<body>
+    <iframe class='lessons-con' src='lessons-con.html'></iframe>
+    <div class='doc-content'>
+        <h1 id='header'> Shared groups </h1>
+        <p>Shared groups are a group of are variables you can access between any script.</p>
+        <h1>Functions:</h1>
+        <h2><code>Stic.NewSharedGroup(groupName : string)</code></h2>
+        <h2><code>group.AddValue(valueName : string, value : any)</code></h2>
+        <p>Example usage:</p>
+        <p>Script1:</p>
+        <pre><code class="lua">
+local Stic = require(game.ReplicatedStorage.Stic)
+local someGroup = Stic.NewSharedGroup('someGroup')
+someGroup.AddValue('someValue', 150)
+        </code></pre>
+        <br>
+        <p>Script2:</p>
+        <pre><code class="lua">
+local Stic = require(game.ReplicatedStorage.Stic)
+wait() -- we wait so the group is created first
+print(Stic.Shared.someGroup.someValue) -- prints 150
+        </code></pre>
+        <p>Shared groups don't seem like a very useful thing, but they can make your code & game more organized.</p>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel='stylesheet' href='/doc_template/default.css' type="text/css"></link>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+      href="/luaHL/styles/atom-one-dark.css">
+    <script src="/luaHL/highlight.pack.js"></script><script>hljs.highlightAll();</script>
+    
+    <title>Stic - Custom Services</title>
+
+</head>
+<body>
+    <iframe class='lessons-con' src='lessons-con.html'></iframe>
+    <div class='doc-content'>
+        <h1 id='header'> Custom Services </h1>
+        <p>Custom Services are a group of functions and variables.</p>
+        <h1>Functions:</h1>
+        <h2><code>Stic.NewService(serviceName : string)</code></h2>
+        <h2><code>Stic.GetService(serviceName : string)</code></h2>
+        <h2><code>service.AddFunction(funcName : string, func : function)</code></h2>
+        <h2><code>service.AddVar(varName : string, defaultValue : any)</code></h2>
+        <h2><code>service.GetVarValue(varName : string, defaultValue : any)</code></h2>
+        <h2><code>service.GetVarSignals(varName : string)</code></h2>
+        <h2><code>service.SetVar(varName : string, value : any)</code></h2>
+        <h1>Signals:</h1>
+        <h2><code>var.OnChange(func : function)</code></h2>
+        <h2><code>var.OnIncrease(func : function)</code></h2>
+        <h2><code>var.OnDecrease(func : function)</code></h2>
+        <p>Example usage:</p>
+        <p>Script1:</p>
+        <pre><code class="lua">
+local Stic = require(game.ReplicatedStorage.Stic)
+local someService = Stic.NewService('someService')
+function addFunc(n1,n2)
+    return n1+n2
+end
+someService.AddFunction('add', addFunc)
+local someVar = someService.AddVar('someVar') -- if you don't give second parameter, it means nil
+wait(2)
+someVar.SetVar('someVar', 10)
+        </code></pre>
+        <br>
+        <p>Script2:</p>
+        <pre><code class="lua">
+local Stic = require(game.ReplicatedStorage.Stic)
+wait() -- we wait so the service is created first
+local someService = Stic.GetService('someService')
+print(someService.add(1+2)) -- prints 3
+local signalsOfSomeVar = Stic.GetVarSignals('someVar')
+function someVarChanged(newValue)
+    print(newValue) -- prints 10 (the new value)
+end
+signalsOfSomeVar.OnChange(someVarChanged)
+--OnIncrease and OnDecrease works the same way
+        </code></pre>
+        <p>Services are the second most useful things in Stic after signals. They are very cool!</p>
+    </div>
+</body>
+</html>
+

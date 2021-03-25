@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class='lesson-container' onclick=" window.top.location.href='index.html' "><div class='lesson'><p>Home</p></div></div>
+    <div class='lesson-container' onclick=" window.top.location.href='lesson.html' "><div class='lesson'><p>Lesson</p></div></div>
+    <div class='lesson-container donate' onclick=" window.top.location.href='https://www.roblox.com/games/6531086713' "><div class='lesson donate'><p>Donate</p></div></div>
+</body>
+</html>
+
+<style>
+    @font-face {
+        font-family: "Roboto";
+        src: url(/Roboto/Roboto-Regular.ttf) format("truetype");
+    }
+    * {
+        font-family: 'Roboto';
+        margin: 0;
+    } 
+    body {
+        background-color: #303040;
+    }
+    .lesson-container {
+        position: relative;
+        height: 40px;
+        min-height: 30px;
+        cursor: pointer;
+    }
+    .lesson-container:hover >.lesson {
+        background-color: #70708f;
+    }
+    .lesson-container:active > .lesson {
+        background-color: #444458;
+        transform: scale(.97,.97);
+    }
+    .lesson {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: all 0.2s, transform 0.1s;
+        background-color: #505069;
+    }
+    .lesson>p {
+        font-size: 14px;
+        position: absolute;
+        transform: translateX(10px) translateY(-50%);
+        /*height: fit-content;*/
+        top: 50%;
+        color: rgb(255,255,255);
+        transition: all 0.2s;
+        user-select: none;
+    }
+    .lesson:hover>p {
+        color: rgb(174, 202, 255);
+    }
+    .lesson.donate {
+        position: relative;
+        height: 40px;
+        background-color: #ebd246;
+    }
+    .lesson.donate:hover {
+        background-color: #ffec82;
+    }
+    .lesson.donate>p {
+        color: black;
+    }
+    .donate.lesson-container {
+        position: absolute;
+        height: 40px;
+        width: 100%;
+        cursor: pointer;
+        top: calc(100% - 40px);
+    }
+</style>
